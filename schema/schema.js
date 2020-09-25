@@ -2,16 +2,13 @@ const graphql = require("graphql");
 const directors = require("../models/director");
 const movies = require("../models/movie");
 
-const {
-  GraphQLObjectType,
-  GraphQLString,
-  GraphQLSchema,
-  GraphQLID,
-  GraphQLInt,
-  GraphQLList,
-} = graphql;
+const Types = require("../types/types");
+const Mutation = require("../mutations/mutations");
 
+const MovieType = Types.MovieType;
+const DirectorsType = Types.DirectorsType;
 
+const { GraphQLObjectType, GraphQLSchema, GraphQLID, GraphQLList } = graphql;
 
 const Query = new GraphQLObjectType({
   name: "Query",
@@ -47,4 +44,5 @@ const Query = new GraphQLObjectType({
 
 module.exports = new GraphQLSchema({
   query: Query,
+  mutation: Mutation,
 });
