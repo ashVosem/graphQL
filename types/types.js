@@ -8,14 +8,15 @@ const {
   GraphQLID,
   GraphQLInt,
   GraphQLList,
+  GraphQLNonNull,
 } = graphql;
 
 const MovieType = new GraphQLObjectType({
   name: "Movie",
   fields: () => ({
     id: { type: GraphQLID },
-    name: { type: GraphQLString },
-    genre: { type: GraphQLString },
+    name: { type: new GraphQLNonNull(GraphQLString) },
+    genre: { type: new GraphQLNonNull(GraphQLString) },
     director: {
       type: DirectorsType,
       resolve(parent, args) {
@@ -29,8 +30,8 @@ const DirectorsType = new GraphQLObjectType({
   name: "Director",
   fields: () => ({
     id: { type: GraphQLID },
-    name: { type: GraphQLString },
-    age: { type: GraphQLInt },
+    name: { type: new GraphQLNonNull(GraphQLString) },
+    age: { type: new GraphQLNonNull(GraphQLInt) },
     movies: {
       type: new GraphQLList(MovieType),
       resolve(parent, args) {
