@@ -1,11 +1,12 @@
 const express = require("express");
 const { graphqlHTTP } = require("express-graphql");
 const mongoose = require("mongoose");
+const cors = require("cors");
 
-const schema = require("../schema/schema");
+const schema = require("./schema/schema");
 
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 
 mongoose
   .connect(
@@ -25,6 +26,8 @@ app.use(
     graphiql: true,
   })
 );
+
+app.use(cors());
 
 app.listen(PORT, (err) => {
   err ? console.log(error) : console.log("Server started!");
