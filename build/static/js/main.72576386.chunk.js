@@ -1,0 +1,2 @@
+(this.webpackJsonpgraphql=this.webpackJsonpgraphql||[]).push([[0],{3:function(e,t,a){e.exports=a(4)},4:function(e,t,a){"use strict";a.r(t);var n=a(0),r=a.n(n),c=a(2),p=a.n(c);a(9);p.a.render(r.a.createElement(r.a.StrictMode,null,r.a.createElement("div",{className:"App"},r.a.createElement("header",{className:"App-header"},"A"))),document.getElementById("root"))},9:function(e,t,a){}},[[3,1,2]]]);
+//# sourceMappingURL=main.72576386.chunk.js.map
